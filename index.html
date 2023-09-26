@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Benchmarking video self-supervised learning methods beyond the canonical evaluation setting.">
+  <meta name="keywords" content="Video SSL, Benchmark">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SEVERE Benchmark</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script> -->
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <!-- <link rel="icon" href="./static/images/favicon.svg"> -->
+  <link rel="icon" href="./static/images/uva.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://bpiyush.github.io">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://ivi.fnwi.uva.nl/vislab/">
+            VISLab, UvA
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">How Severe is Benchmark-Sensitivity in Video Self-Supervised Learning?</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://fmthoker.github.io/">Fida Mohammad Thoker</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://hazeldoughty.github.io/">Hazel Doughty</a><sup>1</sup>,</span>  
+            <span class="author-block">
+              <a href="https://bpiyush.github.io">Piyush Bagad</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://www.ceessnoek.info/">Cees Snoek</a><sup>1</sup></span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>University of Amsterdam</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2203.14221"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2203.14221"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video (coming soon)</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/fmthoker/SEVERE-BENCHMARK"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <!-- <span class="link-block">
+                <a href="https://github.com/google/nerfies/releases/tag/0.1"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a> -->
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="./assets/media/severe-teaser-2.gif" alt="drawing" style="width:100%;"/>
+      <h2 class="subtitle has-text-centered">
+        We investigate how sensitive video self-supervised learning is to the currently
+        used benchmark convention and whether methods generalize beyond the canonical evaluation setting.
+      </h2>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Overview</h2>
+        <div class="content has-text-justified">
+          <p>
+            We investigate across four different factors of sensitivity in the downstream setup:
+          </p>
+          <ul>
+            <li>
+              <strong>Domain:</strong>
+                First, we analyse whether features learned by self-supervised models
+                transfer to datasets that vary in domain with respect to the pre-training dataset.
+            </li>
+            <li>
+              <strong>Samples:</strong>
+                Second, we evaluate the sensitivity of self-supervised methods to
+                the number of downstream samples available for finetuning.
+            </li>
+            <li>
+              <strong>Actions:</strong>
+                Third, we investigate whether self-supervised methods can learn
+                fine-grained features required for recognizing semantically similar actions.
+            </li>
+            <li>
+              <strong>Task:</strong>
+                Finally, we study the sensitivity of video self-supervised methods to the
+                downstream task and question whether self-supervised features can be used beyond action
+                recognition.
+            </li>
+        </div>
+        <div class="content has-text-justified">
+          <p><strong>Models evaluated:</strong> We evaluate a suite of 9 recent video SSL models.<p>
+          <p><strong>Video Datasets:</strong> We use datasets varying along different factors as shown in the radar-plot below.</p>
+          <img src="./assets/media/radar-with-caption.png " alt="radar-plot" style="width:100%; padding-top:2%;"/>  
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Paper video. -->
+    <!-- <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div> -->
+    <!--/ Paper video. -->
+
+    <!-- Highlights. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Highlights</h2>
+        <div class="content has-text-justified">
+          <p>
+            We summarize the key observations from our experiments below.
+          </p>
+
+        <div>
+          <h3 class="title is-4">I. Downstream Domain</h3>
+          <div class="observations domain">
+            <p>
+            (See <b>Table 1</b>) Performance for UCF-101 finetuning and Kinetics-400 linear evaluation
+            is not indicative of how well a self-supervised video
+            model generalizes to different downstream domains, with the ranking of methods changing
+            substantially across datasets and whether full finetuning or linear classification is used.
+            </p>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="title is-4">II. Downstream Samples</h3>
+          <div class="observations samples">
+            <p>
+              We observe from <b>Fig. 3</b> that video self-supervised models are highly sensitive
+              to the amount of samples available for finetuning, with both the gap and rank between
+              methods changing considerably across sample sizes on each dataset.
+            </p>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="title is-4">III. Downstream Actions</h3>
+          <div class="observations actions">
+            <p>
+              Most self-supervised methods in <b>Table 2</b> are sensitive to the actions present
+              in the downstream dataset and do not generalize well to more semantically similar actions.
+              This further emphasizes the need for proper evaluation of self-supervised methods beyond
+              current coarse-grained action classification
+            </p>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="title is-4">IV. Downstream Tasks</h3>
+          <div class="observations tasks">
+            <p>
+              The results in <b>Table 3</b> reveal that action classification performance on UCF101 is mildly indicative for transferability of self-supervised features to other tasks on
+              UCF-101. However, when methods pre-trained on Kinetics-400 are confronted with a
+              domain change in addition to the task change, UCF-101 results are no longer a good proxy
+              and the gap between supervised and self-supervised pre-training is large.
+            </p>
+          </div>
+        </div>
+
+        </div>
+      </div>
+    </div>
+    <!--/ Highlights. -->
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">SEVERE Benchmark</h2>
+        <div class="content has-text-justified">
+          <p>
+            Based on our findings, we propose the SEVERE benchmark
+            (<u>SE</u>nsitivity of <u>V</u>id<u>E</u>o <u>RE</u>presentations)
+            for use in future works to more thoroughly
+            evaluate new video self-supervised methods for generalization.
+            This is a subset of our experiments that are indicative benchmarks
+            for each sensitivity factor and realistic to run.
+          <p>
+          <img src="./assets/media/severe-expts.png " alt="severe" style="width:100%; padding-top:2%;"/>
+          <p>
+            Please check out our <a href="https://github.com/fmthoker/SEVERE-BENCHMARK">code</a>
+            if you'd like to evaluate your self-supervised model on the SEVERE benchmark.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+<style>
+  .observations {
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-bottom: 3%;
+  }
+  .domain {
+    background: #eaf7e8;
+  }
+  .samples {
+    background: #fbe1fb;
+  }
+  .actions {
+    background: #dbeefc;
+  }
+  .tasks {
+    background: #f9fccc;
+  }
+</style>
+
+<!-- <section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered"> -->
+
+    <!-- Concurrent Work. -->
+    <!-- <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Related Links</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            There's a lot of excellent work that was introduced around the same time as ours.
+          </p>
+        </div>
+      </div>
+    </div> -->
+    <!--/ Concurrent Work. -->
+
+  <!-- </div>
+</section> -->
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@inproceedings{thoker2022severe,
+  author    = {Thoker, Fida Mohammad and Doughty, Hazel and Bagad, Piyush and Snoek, Cees},
+  title     = {How Severe is Benchmark-Sensitivity in Video Self-Supervised Learning?},
+  journal   = {ECCV},
+  year      = {2022},
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="https://arxiv.org/pdf/2203.14221.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/fmthoker/SEVERE-BENCHMARK" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This website is based on the template from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>. We sincerely thank <a href="https://keunhong.com/">Keunhong Park</a> for developing and open-sourcing this template.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
