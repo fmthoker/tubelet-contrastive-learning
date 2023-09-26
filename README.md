@@ -1,6 +1,6 @@
-# SEVERE Benchmark Website
+# Tubelet Contrastive Learning Website
 
-This is the repository that contains source code for the [project website](https://bpiyush.github.io/SEVERE-website) for our ECCV 2022 paper.
+This repository contains source code for the [project website](https://fmthoker.github.io/tubelet-contrastive-learning/) for our ICCV 2023 paper.
 
 
 # Website License
