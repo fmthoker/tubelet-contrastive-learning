@@ -203,11 +203,19 @@ We propose a self-supervised method for learning motion-focused video representa
         <div>
           <h3 class="title is-4">I. Main Ablation </h3>
           <div class="observations domain">
-            <p>
-            Performance for UCF-101 finetuning and Kinetics-400 linear evaluation
-            is not indicative of how well a self-supervised video
-            model generalizes to different downstream domains, with the ranking of methods changing
-            substantially across datasets and whether full finetuning or linear classification is used.
+            <p> We  demonstrate the impact of each component in  our tubelet-contrastive learning.
+It is clear that the motion within tubelets is critical to
+our model’s success as contrasting static tubelets obtained
+from our tubelet generation (Section 3.1) actually decreases
+the performance from the temporal contrast baseline. When
+tubelet motion is added (Section 3.2), performance improves considerably, e.g. Gym (103
+) +17.4% and SSv2-Sub
++7.4%. Finally, adding more motion types via tubelet transformations (Section 3.3) further improves the video representation quality, e.g. UCF (103
+) +2.5% and Gym (103
+)
++2.4%. This highlights the importance of including a variety of motions beyond what is present in the pretraining
+data to learn generalizable video representations.
+
             </p>
           <img src="./assets/media/ablation.png " alt="severe" style="width:100%; "/>
           </div>
