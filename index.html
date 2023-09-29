@@ -171,33 +171,6 @@ We propose a self-supervised method for learning motion-focused video representa
       <div class="column is-four-fifths">
         <h2 class="title is-3">Method Overview</h2>
         <div class="content has-text-justified">
-          <p>
-            We investigate across four different factors of sensitivity in the downstream setup:
-          </p>
-          <ul>
-            <li>
-              <strong>Domain:</strong>
-                First, we analyse whether features learned by self-supervised models
-                transfer to datasets that vary in domain with respect to the pre-training dataset.
-            </li>
-            <li>
-              <strong>Samples:</strong>
-                Second, we evaluate the sensitivity of self-supervised methods to
-                the number of downstream samples available for finetuning.
-            </li>
-            <li>
-              <strong>Actions:</strong>
-                Third, we investigate whether self-supervised methods can learn
-                fine-grained features required for recognizing semantically similar actions.
-            </li>
-            <li>
-              <strong>Task:</strong>
-                Finally, we study the sensitivity of video self-supervised methods to the
-                downstream task and question whether self-supervised features can be used beyond action
-                recognition.
-            </li>
-        </div>
-        <div class="content has-text-justified">
           <p><strong>Models evaluated:</strong> We evaluate a suite of 9 recent video SSL models.<p>
           <p><strong>Video Datasets:</strong> We use datasets varying along different factors as shown in the radar-plot below.</p>
           <img src="./assets/media/method.png " alt="radar-plot" style="width:100%; padding-top:2%;"/>  
