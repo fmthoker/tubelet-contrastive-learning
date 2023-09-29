@@ -216,10 +216,7 @@ We propose a self-supervised method for learning motion-focused video representa
         <div>
           <h3 class="title is-4">II. Motion Focus</h3>
           <div class="observations samples">
-            <p>
-              We observe from <b>Fig. 3</b> that video self-supervised models are highly sensitive
-              to the amount of samples available for finetuning, with both the gap and rank between
-              methods changing considerably across sample sizes on each dataset.
+            <p> To understand what our model learns, we visualize the class agnostic activation maps  of various downsteram datasets without any finetuning for the temporal contrastive baseline and our approach. Without previously seeing any of the data, we observe that our approach attends regions with motion while the temporal contrastive baseline mostly attends to the background.
             </p>
           <img src="./assets/media/grad-cam.png " alt="severe" style="width:100%; "/>
           </div>
