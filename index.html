@@ -225,11 +225,9 @@ We propose a self-supervised method for learning motion-focused video representa
         <div>
           <h3 class="title is-4">III. Video-Data Efficiency</h3>
           <div class="observations actions">
-            <p>
-              Most self-supervised methods in <b>Table 2</b> are sensitive to the actions present
-              in the downstream dataset and do not generalize well to more semantically similar actions.
-              This further emphasizes the need for proper evaluation of self-supervised methods beyond
-              current coarse-grained action classification
+            <p> To demonstrate our method’s data efficiency, we pretrain using subsets of the Kinetics-400 training data. In
+particular, we sample 5%, 10%, 25%, 33% and 50% of the Kinetics-400 training set with three different seeds and use
+this to pretrain our model and the temporal contrastive baseline. We compare the effectiveness of these representations after finetuning on 5 different donwstream setups. On all downstream setups, our method maintains similar performance when reducing the pretraining data to just 25%, while the temporal contrastive baseline performance decreases significantly.
             </p>
           <img src="./assets/media/data-eff.png " alt="severe" style="width:100%; "/>
           </div>
