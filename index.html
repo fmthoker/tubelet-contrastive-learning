@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="Benchmarking video self-supervised learning methods beyond the canonical evaluation setting.">
-  <meta name="keywords" content="Video SSL, Benchmark">
+        content="A data efficient method for  video self-supervised learning">
+  <meta name="keywords" content="Tubelet contrastive,Video Self-supervised Learning">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Tubelet Contrastive Learning</title>
 
@@ -206,7 +206,7 @@ We propose a self-supervised method for learning motion-focused video representa
             <p> We  demonstrate the impact of each component in  our tubelet-contrastive learning.  It is clear that the motion within tubelets is critical to our model’s success as contrasting static tubelets obtained from our tubelet generation  actually decreases the performance from the temporal contrast baseline. When
 tubelet motion is added, performance improves considerably, Finally, adding more motion types via tubelet transformations further improves the video representation quality. This highlights the importance of including a variety of motions beyond what is present in the pretraining data to learn generalizable video representations.
             </p>
-          <img src="./assets/media/ablation.png " alt="severe" style="width:100%; "/>
+          <img src="./assets/media/ablation.png " alt="ablation" style="width:100%; "/>
           </div>
         </div>
 
@@ -215,7 +215,7 @@ tubelet motion is added, performance improves considerably, Finally, adding more
           <div class="observations samples">
             <p> To understand what our model learns, we visualize the class agnostic activation maps  of various downsteram datasets without any finetuning for the temporal contrastive baseline and our approach. Without previously seeing any of the data, we observe that our approach attends regions with motion while the temporal contrastive baseline mostly attends to the background.
             </p>
-          <img src="./assets/media/grad-cam.png " alt="severe" style="width:100%; "/>
+          <img src="./assets/media/grad-cam.png " alt="grad-cam" style="width:100%; "/>
           </div>
         </div>
 
@@ -226,7 +226,7 @@ tubelet motion is added, performance improves considerably, Finally, adding more
 particular, we sample 5%, 10%, 25%, 33% and 50% of the Kinetics-400 training set with three different seeds and use
 this to pretrain our model and the temporal contrastive baseline. We compare the effectiveness of these representations after finetuning on 5 different donwstream setups. On all downstream setups, our method maintains similar performance when reducing the pretraining data to just 25%, while the temporal contrastive baseline performance decreases significantly.
             </p>
-          <img src="./assets/media/data-eff.png " alt="severe" style="width:100%; "/>
+          <img src="./assets/media/data-eff.png " alt="data-eff" style="width:100%; "/>
           </div>
         </div>
 
